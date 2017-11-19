@@ -120,7 +120,7 @@ public class MusicRemoteDataSource implements MusicDataSource {
     @Override
     public void getPageListByBook(Album album, int pageCode, final PageListGetCallback callBack) {
         BmobQuery<Music> query = new BmobQuery<>();
-        query.addWhereEqualTo(MusicSchema.Table.Cols.BOOK, album);
+        query.addWhereEqualTo(MusicSchema.Table.Cols.ALBUM, album);
         query.setLimit(PAGE_LIMIT);
         query.setSkip(pageCode * PAGE_LIMIT);
         query.order(MusicSchema.Table.Cols.CREATE_TIME);
@@ -139,7 +139,7 @@ public class MusicRemoteDataSource implements MusicDataSource {
     @Override
     public void getPageTotal(Album album, final TotalGetCallback callback) {
         BmobQuery<Music> query = new BmobQuery<>();
-        query.addWhereEqualTo(MusicSchema.Table.Cols.BOOK, album);
+        query.addWhereEqualTo(MusicSchema.Table.Cols.ALBUM, album);
         query.count(Music.class, new CountListener() {
             @Override
             public void done(Integer total, BmobException e) {

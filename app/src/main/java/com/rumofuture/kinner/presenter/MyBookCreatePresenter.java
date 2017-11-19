@@ -115,7 +115,7 @@ public class MyBookCreatePresenter implements MyBookCreateContract.Presenter, Us
         }
 
         User currentUser = BmobUser.getCurrentUser(User.class);
-        currentUser.increment(UserSchema.Table.Cols.BOOK_TOTAL);
+        currentUser.increment(UserSchema.Table.Cols.ALBUM_TOTAL);
         mUserRepository.updateUserInfo(currentUser, this);
     }
 

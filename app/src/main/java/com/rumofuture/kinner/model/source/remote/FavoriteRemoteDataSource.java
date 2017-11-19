@@ -59,9 +59,9 @@ public class FavoriteRemoteDataSource implements FavoriteDataSource {
     @Override
     public void getFavorite(Favorite favorite, final FavoriteGetCallback callback) {
         BmobQuery<Favorite> query = new BmobQuery<>();
-        query.addWhereEqualTo(FavoriteSchema.Table.Cols.BOOK, favorite.getAlbum());
+        query.addWhereEqualTo(FavoriteSchema.Table.Cols.ALBUM, favorite.getAlbum());
         query.addWhereEqualTo(FavoriteSchema.Table.Cols.FAVOR, favorite.getFavor());
-        query.include(FavoriteSchema.Table.Cols.BOOK);
+        query.include(FavoriteSchema.Table.Cols.ALBUM);
         query.include(FavoriteSchema.Table.Cols.FAVOR);
         query.findObjects(new FindListener<Favorite>() {
             @Override

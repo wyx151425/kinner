@@ -144,7 +144,7 @@ public class MyBookPageListPresenter implements MyBookPageListContract.Presenter
             mView.showPageSaveSuccess(music);
         }
 
-        mAlbum.increment(AlbumSchema.Table.Cols.PAGE_TOTAL);
+        mAlbum.increment(AlbumSchema.Table.Cols.MUSIC_TOTAL);
         mBookRepository.updateBook(mAlbum, null, this);
     }
 
@@ -163,7 +163,7 @@ public class MyBookPageListPresenter implements MyBookPageListContract.Presenter
             mView.showPageDeleteSuccess(music);
         }
 
-        mAlbum.increment(AlbumSchema.Table.Cols.PAGE_TOTAL, -1);
+        mAlbum.increment(AlbumSchema.Table.Cols.MUSIC_TOTAL, -1);
         mBookRepository.updateBook(mAlbum, null, this);
     }
 

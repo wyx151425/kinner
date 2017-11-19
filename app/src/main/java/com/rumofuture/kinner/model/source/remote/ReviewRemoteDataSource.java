@@ -63,7 +63,7 @@ public class ReviewRemoteDataSource implements ReviewDataSource {
     @Override
     public void getReviewListByBook(Album album, int pageCode, final ReviewListGetCallback callback) {
         BmobQuery<Review> query = new BmobQuery<>();
-        query.addWhereEqualTo(ReviewSchema.Table.Cols.BOOK, album);
+        query.addWhereEqualTo(ReviewSchema.Table.Cols.ALBUM, album);
         query.include(ReviewSchema.Table.Cols.REVIEWER);
         query.setLimit(PAGE_LIMIT);
         query.setSkip(pageCode * PAGE_LIMIT);

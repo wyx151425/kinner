@@ -160,7 +160,7 @@ public class MyBookListFragment extends Fragment implements MyBookListContract.V
             return;
         }
         if (REQUEST_BOOK == requestCode) {
-            Album album = (Album) data.getSerializableExtra(MyBookCreateFragment.EXTRA_BOOK);
+            Album album = (Album) data.getSerializableExtra(MyBookCreateFragment.EXTRA_ALBUM);
             mAlbumList.add(album);
             mBookListAdapter.notifyDataSetChanged();
             Toast.makeText(getActivity(), R.string.prompt_create_success, Toast.LENGTH_LONG).show();

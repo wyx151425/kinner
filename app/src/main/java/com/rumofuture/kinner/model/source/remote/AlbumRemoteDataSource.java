@@ -194,7 +194,7 @@ public class AlbumRemoteDataSource implements AlbumDataSource {
     public void getFavoriteBookList(User favor, int pageCode, final BookListGetCallback callback) {
         BmobQuery<Favorite> query = new BmobQuery<>();
         query.addWhereEqualTo(FavoriteSchema.Table.Cols.FAVOR, favor);
-        query.include(FavoriteSchema.Table.Cols.BOOK + "." + AlbumSchema.Table.Cols.AUTHOR);
+        query.include(FavoriteSchema.Table.Cols.ALBUM + "." + AlbumSchema.Table.Cols.AUTHOR);
         query.setLimit(PAGE_LIMIT);
         query.setSkip(pageCode * PAGE_LIMIT);
         query.order(FavoriteSchema.Table.Cols.CREATE_TIME);

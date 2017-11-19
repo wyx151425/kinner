@@ -28,7 +28,7 @@ import static android.app.Activity.RESULT_OK;
 
 public class MyBookCreateFragment extends Fragment implements MyBookCreateContract.View {
 
-    public static final String EXTRA_BOOK = "com.rumofuture.nemo.view.fragment.MyBookCreateFragment.book";
+    public static final String EXTRA_ALBUM = "com.rumofuture.nemo.view.fragment.MyBookCreateFragment.book";
 
     private MyBookCreateContract.Presenter mPresenter;
 
@@ -38,9 +38,7 @@ public class MyBookCreateFragment extends Fragment implements MyBookCreateContra
     private EditText mBookNameView;
     private TextView mBookStyleView;
     private EditText mBookIntroductionView;
-    private SwitchCompat mBookOwnSwitchView;
     private SwitchCompat mBookShowSwitchView;
-    private SwitchCompat mBookShareSwitchView;
 
     private static final int REQUEST_STYLE = 711;
 
@@ -76,9 +74,7 @@ public class MyBookCreateFragment extends Fragment implements MyBookCreateContra
 
         mBookNameView = view.findViewById(R.id.book_name_view);
         mBookIntroductionView = view.findViewById(R.id.book_introduction_view);
-        mBookOwnSwitchView = view.findViewById(R.id.book_own_switch_view);
         mBookShowSwitchView = view.findViewById(R.id.book_show_switch_view);
-        mBookShareSwitchView = view.findViewById(R.id.book_share_switch_view);
 
         mBookStyleView = view.findViewById(R.id.book_style_view);
         mBookStyleView.setOnClickListener(new View.OnClickListener() {
@@ -98,9 +94,7 @@ public class MyBookCreateFragment extends Fragment implements MyBookCreateContra
                 album.setName(mBookNameView.getText().toString().trim());
                 album.setStyle(mBookStyleView.getText().toString());
                 album.setIntroduction(mBookIntroductionView.getText().toString());
-                album.setOwn(mBookOwnSwitchView.isChecked());
                 album.setShow(mBookShowSwitchView.isChecked());
-                album.setShare(mBookShareSwitchView.isChecked());
                 mPresenter.createBook(album);
             }
         });
@@ -116,7 +110,7 @@ public class MyBookCreateFragment extends Fragment implements MyBookCreateContra
     @Override
     public void showBookCreateSuccess(Album album) {
         Intent intent = new Intent();
-        intent.putExtra(EXTRA_BOOK, album);
+        intent.putExtra(EXTRA_ALBUM, album);
         getActivity().setResult(RESULT_OK, intent);
         getActivity().finish();
     }

@@ -61,11 +61,7 @@ public class KinnerAlbumInfoAdapter extends RecyclerView.Adapter<RecyclerView.Vi
             holder.mBookInfoContainer.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (mAlbum.getShare()) {
-                        KinnerBookShareActivity.actionStart(mContext, mAlbum);
-                    } else {
-                        KinnerBookPageListActivity.actionStart(mContext, mAlbum);
-                    }
+                    KinnerBookPageListActivity.actionStart(mContext, mAlbum);
                 }
             });
             holder.mReviewActionView.setOnClickListener(new View.OnClickListener() {

@@ -65,14 +65,14 @@ public class MyBookListPresenter implements MyBookListContract.Presenter, UserDa
     @Override
     public void updateMyBookTotalOnCreate() {
         User currentUser = BmobUser.getCurrentUser(User.class);
-        currentUser.increment(UserSchema.Table.Cols.BOOK_TOTAL);
+        currentUser.increment(UserSchema.Table.Cols.ALBUM_TOTAL);
         mUserRepository.updateUserInfo(currentUser, this);
     }
 
     @Override
     public void updateMyBookTotalOnDelete() {
         User currentUser = BmobUser.getCurrentUser(User.class);
-        currentUser.increment(UserSchema.Table.Cols.BOOK_TOTAL, -1);
+        currentUser.increment(UserSchema.Table.Cols.ALBUM_TOTAL, -1);
         mUserRepository.updateUserInfo(currentUser, this);
     }
 
