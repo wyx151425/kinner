@@ -1,0 +1,19 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              tools:context="com.rumofuture.kinner.view.fragment.MyBookURLEditFragment">
+
+    <EditText
+        android:id="@+id/book_url_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_light_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_large_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_large_margin"
+        android:hint="@string/prompt_book_url"
+        android:inputType="textUri"
+        android:maxLines="1"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/nemo_text_middle_size"/>
+</LinearLayout>

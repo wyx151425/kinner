@@ -1,0 +1,34 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.rumofuture.kinner.view.fragment.KinnerBookReviewEditFragment">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_vertical_middle_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_middle_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_middle_margin"
+        android:layout_marginTop="@dimen/activity_vertical_middle_margin"
+        android:background="@drawable/shape_text_view_review">
+
+        <EditText
+            android:id="@+id/review_content_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_middle_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_middle_margin"
+            android:background="@null"
+            android:gravity="start"
+            android:hint="@string/prompt_review_edit"
+            android:minLines="7"
+            android:textColor="@color/colorBlack"
+            android:textColorHint="@color/colorSilver"
+            android:textSize="@dimen/nemo_text_standard_size"/>
+    </android.support.v7.widget.CardView>
+</LinearLayout>
